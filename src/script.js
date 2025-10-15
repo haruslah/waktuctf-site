@@ -58,17 +58,18 @@ if (localStorage.getItem("islogin") === "true") {
     rightDiv.insertBefore(logoutP, about.nextSibling);
     logoutP.appendChild(logoutA);
 
-} else {
-    // this is a redundant check, but it's here to ensure
-    // that the "Login" link is only added when the user is not logged in.
-    // it prevents adding a "Login" link to the login page itself.
-    if (!window.location.href.endsWith("login.html")) {
-        const p = document.createElement("p");
-        const a = document.createElement("a");
-        a.href = "login.html";
-        a.textContent = "Login"; 
-        p.appendChild(a);
+} 
+// else {
+//     // this is a redundant check, but it's here to ensure
+//     // that the "Login" link is only added when the user is not logged in.
+//     // it prevents adding a "Login" link to the login page itself.
+//     if (!window.location.href.endsWith("login.html")) {
+//         const p = document.createElement("p");
+//         const a = document.createElement("a");
+//         a.href = "login.html";
+//         a.textContent = "Login"; 
+//         p.appendChild(a);
 
-        rightDiv.insertBefore(p, about);
-    }
-}
+//         rightDiv.insertBefore(p, about);
+//     }
+// }
