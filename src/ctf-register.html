@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+        <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <h1><a href="index.html">WaktuCTF</a></h1>
+        </div>
+        <div class="right">
+            <p><a href="about.html">About</a></p>
+        </div>
+    </div>
+
+    <section class="register">
+        <div class="form-card">
+        <h2>Register for a CTF</h2>
+        <form id="registerForm" action="#">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="team">Team:</label>
+            <input type="text" id="team" name="team" placeholder="Enter your team name">
+
+            <label for="ctf">Choose CTF Event:</label>
+            <select id="ctf" name="ctf" required>
+                <option value="">Select CTF</option>
+                <option value="stacksmash">StackSmash CTF</option>
+                <option value="webwarriors">WebWarriors CTF</option>
+                <option value="cyberapocalypse">CyberApocalypse CTF</option>
+                <option value="htbuni">HTB University CTF</option>
+                <option value="null">Null CTF</option>
+                <option value="fortid">FortID CTF</option>
+                <option value="bytehunters">Byte Hunters CTF</option>
+                <option value="cookiesmashers">CookieSmashers CTF</option>
+                <option value="tryr00t">TryR00T CTF</option>
+                <option value="cybercrew">Cyber Crew CTF</option>
+            </select>
+
+            <label>Experience Level:</label>
+            <div class="radio-group">
+            <input type="radio" id="beginner" name="experience" value="beginner" required>
+            <label for="beginner">Beginner</label>
+
+            <input type="radio" id="intermediate" name="experience" value="intermediate">
+            <label for="intermediate">Intermediate</label>
+
+            <input type="radio" id="advanced" name="experience" value="advanced">
+            <label for="advanced">Advanced</label>
+            </div>
+
+            <label>Notify Me Via:</label>
+            <div class="checkbox-group">
+            <input type="checkbox" id="email" name="notify" value="email">
+            <label for="beginner">Email</label>
+
+            <input type="checkbox" id="discord" name="notify" value="discord">
+            <label for="intermediate">Discord</label>
+
+            <input type="checkbox" id="whatsapp" name="notify" value="whatsapp">
+            <label for="advanced">Whatsapp</label>
+            </div>
+
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Anything you’d like to add..."></textarea>
+
+            <div class="button-group">
+            <button type="submit" class="submit">Submit</button>
+            <button type="reset" class="clear">Clear</button>
+            </div>
+        </form>
+        </div>
+    </section>
+      <script>
+    // attach event listener to the form
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      alert("Registration successful!");
+    });
+  </script>
+    <script src="script.js"></script>
+</body>
+</html>

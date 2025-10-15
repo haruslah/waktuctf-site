@@ -1,0 +1,228 @@
+<html lang="en">
+<head>
+  < meta charset="UTF-8">
+  <title>Ticketing System</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f4f4; margin:0; padding:0; }
+    .navbar { background:#000000; padding:15px; text-align:center; display:none; }
+    .navbar a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; cursor:pointer; }
+    .container { width:60%; margin:20px auto; }
+    .box { background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px gray; margin-top:20px; }
+    .big-section {
+      width: 600px;
+      height: 630px;
+      border: 2px solid black;
+      padding: 10px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    .small-section {
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+      padding: 10px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 50px auto;
+    }
+    button { padding:10px 20px; margin:5px; border:none; background:#28a745; color:#fff; border-radius:5px; cursor:pointer; }
+    button:hover { background:#218838; }
+    table { width:100%; border-collapse:collapse; margin-top:20px; }
+    th, td { border:1px solid #ccc; padding:10px; text-align:center; }
+    th { background:#909090; color:#000; }   /* ash grey header */
+    td { background:#DCDCDC; color:#000; }   /* lighter ash grey rows */
+
+    #error { color:red; }
+    input[type="radio"], input[type="checkbox"] {
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+    /* Marquee */
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      animation: scroll-left 12s linear infinite;
+      font-size: 20px;
+      font-weight: normal;
+      background: transparent;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    @keyframes scroll-left {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="container">
+    <div class="box" style="max-width:400px; margin:auto; text-align:center;">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <br>
+      <button onclick="validateLogin()">Login</button>
+      <p id="error"></p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="navbar" id="navbar">
+    <a onclick="showSection('bookingPage')">Book Ticket</a>
+    <a onclick="showSection('viewPage')">View Tickets</a>
+    <a onclick="logout()">Logout</a>
+  </div>
+
+  <!-- BOOKING PAGE -->
+  <div id="bookingPage" class="container" style="display:none;">
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+      ⋆✴︎˚｡⋆ EXO PLANET 6 : EXO’verse – Don’t Miss the Ultimate Multi-Day Concert Experience! ⋆✴︎˚｡⋆
+    </div>
+
+    <div class="box">
+      <h2 align="center">Book Your Ticket Now ! ૮₍˶ •. • ⑅₎ა ♡ </h2>
+      <img src="C:\Users\User\Downloads\WhatsApp Image 2025-09-05 at 10.36.57_621f56d6.jpg" align="center" width="870" height="400"></img><br><br>
+      <form id="ticketForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <br><br>
+        <input type="email" id="email" placeholder="Email" required>
+        <br><br>
+        <big><label>Choose Event:</label></big>
+        <select id="event"name="event">
+          <option>3-Day Pass (Full Concert)</option>
+          <option>Day 1 Pass</option>
+          <option>Day 2 Pass</option>
+          <option>Day 3 Pass</option>
+          <option>2-Day Pass (Day 1 & Day 2) </option>
+          <option>2-Day Pass (Day 1 & Day 3)</option>
+          <option>2-Day Pass (Day 2 & Day 3)</option>
+        </select>
+        <br><br>
+        <div class="big-section">
+          <label><big>Seat Type:</big></label>
+          <br>
+          <img src="C:\Users\User\Downloads\WhatsApp Image 2025-09-05 at 00.11.10_c6078267.jpg" width="500" height="450"></img>
+          <br>
+          <big>
+            <label><input type="radio" name="seat" value="VIP"> VIP</label><br><br>
+            <label><input type="radio" name="seat" value="Regular"> Regular</label><br><br>
+            <label><input type="radio" name="seat" value="Economy"> Economy</label><br><br>
+            <label><input type="radio" name="seat" value="Standing"> Standing</label>
+          </big>
+        </div>
+        <br><br>
+        <div class="small-section">
+          <label><big>Extras:</big></label>
+          <br><br>
+          <big>
+            <input type="checkbox" value="Parking"> Parking <br><br>
+            <input type="checkbox" value="Food Voucher"> Food Voucher <br><br>
+            <input type="checkbox" value="Backstage Pass"> Backstage Pass
+          </big>
+        </div>
+        <br>
+        <textarea id="requests" placeholder="Special Requests"></textarea><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- VIEW TICKETS PAGE -->
+  <div id="viewPage" class="container" style="display:none;">
+    <div class="box">
+      <h2>Booked Tickets</h2>
+      <table id="ticketTable">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Event</th>
+          <th>Seat</th>
+          <th>Extras</th>
+          <th>Requests</th>
+        </tr>
+      </table>
+	  <br>
+	  <br>
+	  Don’t miss out! Click here to watch their latest videos on <a href="https://www.youtube.com/user/EXOK" target="_blank">EXO Official YouTube</a>.
+	  <br>
+	  <br>
+	  <a href="mailto:support@exo.com">Email Support</a>
+      <a href="tel:+60123456789">Call Hotline</a>
+      <a href="https://wa.me/60123456789" target="_blank">Chat on WhatsApp</a>
+
+    </div>
+  </div>
+
+  <script>
+    // Validate Login
+    function validateLogin() {
+      let user = document.getElementById("username").value;
+      let pass = document.getElementById("password").value;
+      if(user === "admin" && pass === "1234") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("navbar").style.display = "block";
+        document.getElementById("bookingPage").style.display = "block";
+      } else {
+        document.getElementById("error").innerText = "Invalid username or password!";
+      }
+    }
+
+    // Navigation
+    function showSection(sectionId) {
+      document.getElementById("bookingPage").style.display = "none";
+      document.getElementById("viewPage").style.display = "none";
+      document.getElementById(sectionId).style.display = "block";
+    }
+
+    // Logout
+    function logout() {
+      document.getElementById("navbar").style.display = "none";
+      document.getElementById("bookingPage").style.display = "none";
+      document.getElementById("viewPage").style.display = "none";
+      document.getElementById("loginPage").style.display = "block";
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+    }
+
+    // Handle Ticket Form
+    document.getElementById("ticketForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let event = document.getElementById("event").value;
+
+      // Seat
+      let seat = document.querySelector("input[name='seat']:checked");
+      seat = seat ? seat.value : "None";
+
+      // Extras
+      let extras = [];
+      document.querySelectorAll("input[type=checkbox]:checked").forEach(cb => extras.push(cb.value));
+
+      let requests = document.getElementById("requests").value;
+
+      // Add row to table
+      let table = document.getElementById("ticketTable");
+      let row = table.insertRow();
+      row.insertCell(0).innerText = name;
+      row.insertCell(1).innerText = email;
+      row.insertCell(2).innerText = event;
+      row.insertCell(3).innerText = seat;
+      row.insertCell(4).innerText = extras.join(", ");
+      row.insertCell(5).innerText = requests;
+
+      alert("Ticket booked successfully!");
+      document.getElementById("ticketForm").reset();
+    });
+  </script>
+
+</body>

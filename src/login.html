@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <h1><a href="index.html">WaktuCTF</a></h1>
+        </div>
+        <div class="right">
+            <p><a href="about.html">About</a></p>
+        </div>
+    </div>
+
+    <div class="login-section">
+        <div class="center">
+            <form onsubmit="return login()">
+                <h1><span>WaktuCTF</span></h1>
+                <input type="text" id="username" placeholder="Username/Email"><br>
+                <input type="password" id="password" placeholder="password"><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
