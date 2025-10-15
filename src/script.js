@@ -5,7 +5,7 @@ if (localStorage.getItem("islogin") === "true" && window.location.href.endsWith(
 }
 
 // if a user is NOT logged in and tries to access any page other than login.html & about.html, redirect them to the login page.
-if (localStorage.getItem("islogin") !== "true" && !window.location.href.endsWith("login.html") && !window.location.href.endsWith("about.html")) {
+if (localStorage.getItem("islogin") !== "true" && !window.location.href.endsWith("login.html") && !window.location.href.endsWith("register.html") && !window.location.href.endsWith("about.html"))  {
     window.location.href = "login.html";
 }
 

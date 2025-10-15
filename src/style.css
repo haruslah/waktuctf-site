@@ -218,6 +218,27 @@ p > a, .navbar .left > h1 > a {
     transform: translateY(-5px);
 }
 
+.register-link {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #6b6b6b;
+}
+
+.register-link a {
+  color: #7f2424;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
 .register-btn {
     display: inline-block;
     margin-top: 10px;

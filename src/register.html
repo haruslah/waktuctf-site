@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <h1><a href="index.html">WaktuCTF</a></h1>
+        </div>
+        <div class="right">
+            <p><a href="about.html">About</a></p>
+        </div>
+    </div>
+
+    <section class="register">
+        <div class="form-card">
+            <h2>Create Your Account</h2>
+            <form id="registerForm" action="register_post.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+
+                <div class="button-group">
+                    <button type="submit" class="submit">Register</button>
+                    <button type="reset" class="clear">Clear</button>
+                </div>
+
+                <p class="register-link">
+                    Already have an account? <a href="login.html">Login Here</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
